@@ -22,7 +22,7 @@ pip install duckdb dbt-core dbt-duckdb
 dbt init
 ```
 
-4. download CSV data from (Kaggel)[https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce] and save them in a folder named data
+4. download CSV data from [Kaggel](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and save them in a folder named data
 
 5. create duckdb database
 ```
@@ -39,7 +39,9 @@ dbt show --inline "select count(*) as n from {{ source('raw','orders') }}"
 ```
 
 `dbt debug` makes sure the connection to the database is correct
+
 `duckdb olist_dwh.duckdb -c "select count(*) from raw.orders;"` should give you ~99441
+
 `dbt show --inline "select count(*) as n from {{ source('raw','orders') }}" ` should return the same number as the above query
 
 if everything is as expected you are ready to move to Phase 1
