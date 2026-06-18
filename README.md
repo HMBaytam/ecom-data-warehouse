@@ -6,7 +6,8 @@ Tools: DuckDB, dbt dbt tests dbt docs
 
 # E-Commerce Dimentional Modeling Project
 
-## Phase 0: Enviroment and raw data load
+## Build setup
+### Phase 0: Enviroment and raw data load
 1. Create a python virtual enviroment 
 ```
 python -m venv .venv
@@ -45,3 +46,13 @@ dbt show --inline "select count(*) as n from {{ source('raw','orders') }}"
 `dbt show --inline "select count(*) as n from {{ source('raw','orders') }}" ` should return the same number as the above query
 
 if everything is as expected you are ready to move to Phase 1
+
+### Phase 1: Sources and staging
+Now that the raw source data is imported into the database, the next step is to setup staging models 
+
+All the staging models live in `models/staging/olist`. The reason for this is to make it easier to add more sources in the future while keeping everything organized
+
+the naming convension for all staging models are as follows 
+`stg_<source name>__<model name>.sql`
+
+The only thing staging models are doing is renaming columns and type casting and keeps the original grain. No joins are made to keep these models atomic
