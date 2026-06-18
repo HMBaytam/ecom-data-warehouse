@@ -35,13 +35,13 @@ The command above creates duckdb database and loads the raw csvs into the databa
 6. to make sure everything is setup correctly run
 ```
 dbt debug                                                                  
-duckdb olist_dwh.duckdb -c "select count(*) from raw.orders;"              
+duckdb olist_dwh_dev.duckdb -c "select count(*) from raw.orders;"              
 dbt show --inline "select count(*) as n from {{ source('raw','orders') }}" 
 ```
 
 `dbt debug` makes sure the connection to the database is correct
 
-`duckdb olist_dwh.duckdb -c "select count(*) from raw.orders;"` should give you ~99441
+`duckdb olist_dwh_dev.duckdb -c "select count(*) from raw.orders;"` should give you ~99441
 
 `dbt show --inline "select count(*) as n from {{ source('raw','orders') }}" ` should return the same number as the above query
 
