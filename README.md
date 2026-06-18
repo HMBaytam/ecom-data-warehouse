@@ -23,7 +23,7 @@ pip install duckdb dbt-core dbt-duckdb
 dbt init
 ```
 
-4. download CSV data from [Kaggel](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and save them in a folder named data
+4. download CSV data from [Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) and save them in a folder named data
 
 5. create duckdb database
 ```
