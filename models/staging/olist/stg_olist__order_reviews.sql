@@ -8,8 +8,8 @@ renamed AS (
         review_score,
         review_comment_title,
         review_comment_message,
-        review_creation_date,
-        review_answer_timestamp
+        CAST(review_creation_date AS DATE) AS review_creation_date,
+        CAST(review_answer_timestamp AS TIMESTAMP) AS review_answer_timestamp
     FROM source
 )
 

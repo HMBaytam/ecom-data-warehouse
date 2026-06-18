@@ -7,7 +7,7 @@ renamed AS (
         order_item_id,
         product_id,
         seller_id,
-        shipping_limit_date,
+        CAST(shipping_limit_date AS DATE) AS shipping_limit_date,
         price,
         freight_value
     FROM source
